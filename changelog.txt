@@ -1,4 +1,10 @@
 ---
+# https://github.com/PatrickN2282/idolBot
+---
+# 1.5.3
+---
+- reworked the restart function to enable at least Idol-grinding
+---
 # http://www.reddit.com/r/cotlibot
 ---
 # 1.5.2

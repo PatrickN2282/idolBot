@@ -534,7 +534,7 @@ __BotCampaignStart(campaign := 0) {
 	Loop {
 		; If the campaign.png is found (which is the big campaign text at the top of the screen), we know for sure that's where we are
 		; If not found, we look for the cog (settings button), we're instead still/already in the game
-		ImageSearch, OutputX, OutputY, 257, 57, 428, 110, *150 images/game/campaign.png
+		ImageSearch, OutputX, OutputY, 345, 55, 500, 90, *150 images/game/campaign_small.png
 		if (ErrorLevel = 0) {
 			__Log("Found the campaign header.")
 			__BotSetCampaign(campaign)
@@ -543,7 +543,7 @@ __BotCampaignStart(campaign := 0) {
 			botSkipToReset := false
 			Break
 		} else {
-			__Log("Searching for the cog.")
+			__Log("Didn't find the Campaign Header, Searching for the cog.")
 			ImageSearch, OutputX, OutputY, 15, 95, 40, 125, *150 images/game/cog.png
 			if (ErrorLevel = 0) {
 				__Log("Found the cog.")
@@ -555,9 +555,9 @@ __BotCampaignStart(campaign := 0) {
 					Break
 				} else {
 					__Log("Left arrow not found, looking for the Start button.")
-					ImageSearch, OutputX, OutputY, 358, 512, 640, 560, *150 images/game/start.png
+					ImageSearch, OutputX, OutputY, 675, 550, 900, 600, *255 images/game/start_new.png
 					if (ErrorLevel = 0) {
-						MouseMove, 498, 540
+						MouseMove, 780, 560
 						Sleep, 500 * optBotClockSpeed
 						Click
 					}
